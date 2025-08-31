@@ -1,60 +1,649 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white font-sans">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center px-4">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Hi, I’m <span className="text-purple-400">Fudoo</span></h1>
-        <p className="text-xl md:text-2xl mb-6">27-year-old creator, cyclist, and explorer of new ideas</p>
-        <div className="flex gap-4">
-          <a href="#about" className="px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-2xl shadow-lg transition">About Me</a>
-          <a href="#contact" className="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-2xl shadow-lg transition">Contact</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GED Social Studies Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        .card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .message-box.show {
+            opacity: 1;
+        }
+        .correct-answer {
+            background-color: #d1fae5;
+            border-left: 4px solid #34d399;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .correct-answer p {
+            margin: 0;
+        }
+        .source-container {
+            background-color: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+        .score-box {
+            background-color: #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-8 flex flex-col items-center">
+    <div class="w-full text-center mb-6">
+        <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight">GED Social Studies Prep</h1>
+        <p class="text-sm text-gray-500 mt-2" id="user-info"></p>
+    </div>
+
+    <div class="w-full">
+        <!-- Category Selection -->
+        <div id="category-section" class="card">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Choose a Topic</h2>
+            <div id="category-buttons" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button data-category="civics" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200 shadow-md">Civics & Government</button>
+                <button data-category="history" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200 shadow-md">U.S. History</button>
+                <button data-category="economics" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200 shadow-md">Economics</button>
+                <button data-category="geography" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200 shadow-md">Geography</button>
+            </div>
         </div>
-      </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 px-6 max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-6">About Me</h2>
-        <p className="text-lg leading-relaxed text-gray-300">
-          My name is Fudoo. I’m 27 years old and passionate about creativity, cycling, and technology. 
-          I love exploring new projects, whether it’s in art, design, or building unique ideas. 
-          This site is my personal corner of the internet where you can learn about me and reach out.
-        </p>
-      </section>
-
-      {/* Skills / Interests Section */}
-      <section id="interests" className="py-20 bg-gray-800 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-10">What I Love</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">
-            <h3 className="text-2xl font-semibold mb-2">🚴 Cycling</h3>
-            <p className="text-gray-400">Exploring long routes, chasing adventure, and staying fit on two wheels.</p>
-          </div>
-          <div className="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">
-            <h3 className="text-2xl font-semibold mb-2">🎨 Creativity</h3>
-            <p className="text-gray-400">From design to art, I enjoy building things that inspire people.</p>
-          </div>
-          <div className="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">
-            <h3 className="text-2xl font-semibold mb-2">💻 Technology</h3>
-            <p className="text-gray-400">Always curious about tech, hacking ideas, and exploring digital trends.</p>
-          </div>
+        <!-- Main Quiz Section -->
+        <div id="quiz-section" class="card mt-6 hidden">
+            <p class="text-sm text-gray-500 mb-2" id="question-tracker"></p>
+            <div id="source-material" class="source-container hidden">
+                <h3 class="font-bold text-gray-700 mb-2">Source Document</h3>
+                <p id="source-text" class="text-gray-600 text-sm leading-relaxed"></p>
+            </div>
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700" id="question-text"></h2>
+            <div id="options-container" class="space-y-4"></div>
+            <div id="feedback-container" class="hidden">
+                <div id="explanation-box" class="correct-answer"></div>
+            </div>
+            <button id="submit-button" class="mt-6 w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition duration-200 shadow-md">Submit Answer</button>
+            <button id="next-button" class="mt-4 w-full py-3 px-6 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition duration-200 shadow-md hidden">Next Question</button>
+            <button id="back-button" class="mt-4 w-full py-3 px-6 bg-gray-500 hover:bg-gray-600 text-white font-bold rounded-lg transition duration-200 shadow-md">Back to Categories</button>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
-        <p className="text-gray-300 mb-6">Want to connect? Feel free to reach out through my socials below:</p>
-        <div className="flex justify-center gap-6">
-          <a href="https://www.instagram.com" target="_blank" className="hover:text-purple-400">Instagram</a>
-          <a href="https://www.tiktok.com" target="_blank" className="hover:text-purple-400">TikTok</a>
-          <a href="mailto:your.email@example.com" className="hover:text-purple-400">Email</a>
+        <!-- Progress Section -->
+        <div class="card mt-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Your Progress</h2>
+            <p class="text-lg text-gray-600">Correct: <span id="correct-count" class="font-bold">0</span></p>
+            <p class="text-lg text-gray-600">Incorrect: <span id="incorrect-count" class="font-bold">0</span></p>
+            <p class="text-lg text-gray-600">Total: <span id="total-count" class="font-bold">0</span></p>
+            <div class="score-box">
+                <p class="text-lg text-gray-800 font-bold">Current Score: <span id="final-score">0</span> / 200</p>
+            </div>
         </div>
-      </section>
+    </div>
+</div>
 
-      {/* Footer */}
-      <footer className="py-6 text-center text-gray-500 border-t border-gray-700">
-        © {new Date().getFullYear()} Fudoo. All rights reserved.
-      </footer>
-    </main>
-  )
-}
+<!-- Message Box for feedback -->
+<div id="message-box" class="message-box"></div>
+
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // --- Firebase and Firestore Setup ---
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+    const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+    let db;
+    let auth;
+    let userId = null;
+
+    const showMessage = (text, type = 'info') => {
+        const messageBox = document.getElementById('message-box');
+        messageBox.textContent = text;
+        messageBox.className = `message-box show ${type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`;
+        setTimeout(() => {
+            messageBox.classList.remove('show');
+        }, 3000);
+    };
+
+    const initializeFirebase = async () => {
+        if (Object.keys(firebaseConfig).length === 0) {
+            console.error("Firebase config is missing. Please provide it to enable data saving.");
+            showMessage("Error: Firebase is not configured.", 'error');
+            return;
+        }
+
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                userId = user.uid;
+                document.getElementById('user-info').textContent = `User ID: ${userId}`;
+                console.log("User signed in with ID:", userId);
+                loadProgress();
+            } else {
+                console.log("No user is signed in. Attempting sign-in...");
+                try {
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                        console.log("Signed in with custom token.");
+                    } else {
+                        await signInAnonymously(auth);
+                        console.log("Signed in anonymously.");
+                    }
+                } catch (error) {
+                    console.error("Firebase Auth error:", error);
+                    showMessage(`Authentication failed: ${error.message}`, 'error');
+                }
+            }
+        });
+    };
+
+    // --- Quiz Questions ---
+    const allQuestions = {
+        civics: [
+            {
+                question: "Which branch of the U.S. government is responsible for interpreting laws and the Constitution?",
+                options: ["Legislative", "Executive", "Judicial", "All of the above"],
+                answer: "Judicial",
+                explanation: "The Judicial branch, which includes the Supreme Court, has the power of judicial review to interpret laws and determine if they are constitutional."
+            },
+            {
+                question: "The First Amendment to the U.S. Constitution protects which of the following rights?",
+                options: ["The right to bear arms", "The right to a speedy trial", "Freedom of speech and religion", "The right to vote"],
+                answer: "Freedom of speech and religion",
+                explanation: "The First Amendment guarantees several fundamental freedoms, including freedom of speech, religion, the press, assembly, and the right to petition the government."
+            },
+            {
+                question: "The process of a bill becoming a law is a key example of which constitutional principle?",
+                options: ["Federalism", "Popular sovereignty", "Republicanism", "Checks and balances"],
+                answer: "Checks and balances",
+                explanation: "The system of checks and balances ensures that no one branch of government becomes too powerful. For a bill to become a law, it must be passed by both the legislative and executive branches."
+            },
+            {
+                question: "The 19th Amendment to the U.S. Constitution granted which group the right to vote?",
+                options: ["African American men", "Women", "18-year-olds", "Native Americans"],
+                answer: "Women",
+                explanation: "The 19th Amendment, ratified in 1920, gave women the right to vote in federal and state elections."
+            },
+            {
+                question: "What is the purpose of the Bill of Rights?",
+                options: ["To establish the structure of the government", "To define the powers of the President", "To protect the basic rights and freedoms of citizens", "To outline the process for amending the Constitution"],
+                answer: "To protect the basic rights and freedoms of citizens",
+                explanation: "The Bill of Rights consists of the first 10 amendments and was added to the Constitution to protect individual liberties and limit the power of the federal government."
+            },
+            {
+                question: "In the United States, who is the head of the executive branch?",
+                options: ["The Chief Justice", "The Speaker of the House", "The Vice President", "The President"],
+                answer: "The President",
+                explanation: "The President is the head of the executive branch and is responsible for enforcing the laws of the United States."
+            },
+            {
+                question: "What is the main function of the legislative branch?",
+                options: ["To enforce laws", "To interpret laws", "To make laws", "To appoint judges"],
+                answer: "To make laws",
+                explanation: "The legislative branch, made up of the Senate and House of Representatives, is responsible for creating and passing new laws."
+            },
+            {
+                source_text: "“We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.” - The Preamble to the U.S. Constitution",
+                question: "Based on the Preamble, which of the following is a primary goal of the U.S. government?",
+                options: ["To limit economic growth", "To promote the general well-being of its citizens", "To create a military alliance with other countries", "To eliminate all forms of taxation"],
+                answer: "To promote the general well-being of its citizens",
+                explanation: "The phrase 'promote the general Welfare' directly states that a key goal of the government is to ensure the well-being and prosperity of its citizens."
+            },
+            {
+                source_text: "A diagram shows the three branches of the U.S. government: Legislative (Congress), Executive (President), and Judicial (Supreme Court). Arrows point from each branch to the other two, with labels such as 'vetoes bills,' 'appoints judges,' and 'declares laws unconstitutional.'",
+                question: "The diagram best illustrates which principle of the U.S. Constitution?",
+                options: ["Federalism", "Separation of powers and checks and balances", "Popular sovereignty", "Due process"],
+                answer: "Separation of powers and checks and balances",
+                explanation: "The diagram with the three distinct branches and arrows showing how they interact with each other perfectly represents the separation of powers and the system of checks and balances designed to prevent any single branch from becoming too powerful."
+            },
+            {
+                source_text: "In the United States, citizens have the right to petition the government for a redress of grievances. This right allows individuals or groups to request the government to take a specific action or to address a problem. It is often exercised through letters, lobbying, and protest.",
+                question: "According to the text, which of the following actions is an example of citizens exercising their right to petition?",
+                options: ["Joining the military", "Voting in a presidential election", "Sending an email to a representative asking for a law to be changed", "Paying federal income taxes"],
+                answer: "Sending an email to a representative asking for a law to be changed",
+                explanation: "The text states that the right to petition allows citizens to 'request the government to take a specific action' and gives examples like 'letters, lobbying, and protest.' Sending an email to a representative is a direct form of communication asking for action, which fits this description."
+            },
+            {
+                source_text: "The Supreme Court has nine justices who are appointed by the President and confirmed by the Senate. Their terms are for life, or until they retire, resign, or are removed through impeachment. This long term is designed to insulate them from political pressure.",
+                question: "Based on the text, why do Supreme Court justices serve for life?",
+                options: ["To ensure they have enough time to complete all their cases", "To prevent them from being influenced by political parties or public opinion", "To reward them for their service to the country", "To give the President time to find a new nominee"],
+                answer: "To prevent them from being influenced by political parties or public opinion",
+                explanation: "The text directly states that the purpose of a lifetime term is to 'insulate them from political pressure,' which means protecting them from the influence of political parties and public opinion."
+            },
+            {
+                source_text: "In a federal system of government, power is divided between a national government and state governments. The Constitution outlines the powers of the federal government (such as declaring war), but it also reserves certain powers to the states (like running local elections).",
+                question: "Based on the text, what is a key characteristic of a federal system?",
+                options: ["All power is concentrated in the national government.", "The national government is stronger than the state governments.", "Power is shared between different levels of government.", "The states have complete control over all laws."],
+                answer: "Power is shared between different levels of government.",
+                explanation: "The text states that in a federal system, 'power is divided between a national government and state governments,' which is the definition of power being shared between different levels."
+            },
+            {
+                source_text: "A political cartoon shows a large figure labeled 'The American People' holding a smaller figure labeled 'Elected Official' on a leash. The leash is attached to a ballot box.",
+                question: "The cartoon is most likely a commentary on which principle of American democracy?",
+                options: ["The right to bear arms", "The separation of powers", "Popular sovereignty", "The rule of law"],
+                answer: "Popular sovereignty",
+                explanation: "Popular sovereignty is the principle that the authority of a state and its government are created and sustained by the consent of its people. The cartoon shows the American people controlling their elected officials through the power of the ballot box, a direct representation of this concept."
+            }
+        ],
+        history: [
+            {
+                question: "What was the main reason the Southern states seceded from the Union, leading to the Civil War?",
+                options: ["Tariffs on imported goods", "States' rights and the issue of slavery", "Differences in religious beliefs", "Disputes over land ownership"],
+                answer: "States' rights and the issue of slavery",
+                explanation: "While states' rights was a key argument, the central issue was the right to own slaves and expand slavery into new territories. The Southern states feared the loss of their way of life and economic system."
+            },
+            {
+                question: "What was the period after the Civil War aimed at rebuilding the United States and readmitting the Confederate states?",
+                options: ["The Great Awakening", "Reconstruction", "The New Deal", "Manifest Destiny"],
+                answer: "Reconstruction",
+                explanation: "Reconstruction was the period (1865-1877) during which the United States worked to address the consequences of the Civil War, including the status of former Confederate states and the rights of newly freed African Americans."
+            },
+            {
+                question: "The New Deal was a series of programs and reforms enacted by which U.S. President to combat the Great Depression?",
+                options: ["Theodore Roosevelt", "Woodrow Wilson", "Franklin D. Roosevelt", "Harry S. Truman"],
+                answer: "Franklin D. Roosevelt",
+                explanation: "Franklin D. Roosevelt's New Deal was a response to the Great Depression, introducing programs like the Civilian Conservation Corps (CCC) and Social Security to provide relief, recovery, and reform."
+            },
+            {
+                question: "What event on December 7, 1941, led the United States to enter World War II?",
+                options: ["The invasion of Poland", "The sinking of the Lusitania", "The attack on Pearl Harbor", "The Battle of Britain"],
+                answer: "The attack on Pearl Harbor",
+                explanation: "The surprise military strike by the Japanese on the U.S. naval base at Pearl Harbor in Hawaii directly led to the United States declaring war and entering World War II."
+            },
+            {
+                question: "What was the primary goal of the Civil Rights Movement in the 1950s and 1960s?",
+                options: ["To end all forms of taxation", "To secure voting rights and end segregation for African Americans", "To establish a national healthcare system", "To reform the prison system"],
+                answer: "To secure voting rights and end segregation for African Americans",
+                explanation: "The Civil Rights Movement was a struggle for social justice to end racial segregation and discrimination against African Americans and to secure federal protection of their voting rights."
+            },
+            {
+                question: "Which figure is known for his 'I Have a Dream' speech during the March on Washington?",
+                options: ["Malcolm X", "Martin Luther King Jr.", "Rosa Parks", "W.E.B. Du Bois"],
+                answer: "Martin Luther King Jr.",
+                explanation: "Delivered in 1963, Martin Luther King Jr.'s 'I Have a Dream' speech is one of the most iconic speeches in American history, advocating for racial equality."
+            },
+            {
+                source_text: "In the late 19th and early 20th centuries, waves of immigrants came to the United States seeking a better life. Many settled in crowded urban areas, working in factories and facing low wages and poor working conditions. This period saw the rise of 'muckrakers'—journalists who exposed corruption and social problems.",
+                question: "Based on the text, what was a significant effect of industrialization and immigration on cities in the late 1800s?",
+                options: ["Decreased population density", "A decline in the number of factory jobs", "Increased social problems and poor working conditions", "The growth of rural communities"],
+                answer: "Increased social problems and poor working conditions",
+                explanation: "The text directly states that immigrants settled in 'crowded urban areas' and faced 'low wages and poor working conditions,' indicating an increase in social problems associated with rapid industrial growth."
+            },
+            {
+                source_text: "During the Cold War, the United States and the Soviet Union engaged in a global rivalry. While they never fought each other directly in a major war, they competed for influence by supporting opposing sides in regional conflicts, building up nuclear arsenals, and engaging in a 'space race.'",
+                question: "The Cold War is best described as a conflict characterized by:",
+                options: ["Direct military combat between two superpowers", "A period of international peace and cooperation", "Economic interdependence between the U.S. and the Soviet Union", "Indirect conflict and ideological competition"],
+                answer: "Indirect conflict and ideological competition",
+                explanation: "The text describes a 'global rivalry' without 'fighting each other directly,' highlighting the indirect nature of the conflict. The competition for influence and the 'space race' are examples of the ideological struggle."
+            },
+            {
+                source_text: "The Great Depression was a severe worldwide economic depression in the 1930s. In the United States, it was caused by factors including the stock market crash of 1929, widespread bank failures, and a drought that devastated farms in the Midwest, known as the Dust Bowl.",
+                question: "Based on the text, which of the following was a cause of the Great Depression?",
+                options: ["World War II", "A sudden increase in consumer spending", "Environmental disaster and bank failures", "The end of government regulation"],
+                answer: "Environmental disaster and bank failures",
+                explanation: "The text mentions two direct causes: 'widespread bank failures' and 'a drought that devastated farms in the Midwest,' which is an environmental disaster."
+            },
+            {
+                source_text: "The Abolitionist Movement was a social and political movement in the United States dedicated to ending slavery. Key figures in the movement included Frederick Douglass, a formerly enslaved man who became a powerful speaker, and Harriet Tubman, who helped hundreds of enslaved people escape via the Underground Railroad.",
+                question: "According to the text, what was the primary goal of the Abolitionist Movement?",
+                options: ["To grant women the right to vote", "To end the practice of slavery", "To establish a national bank", "To expand the nation westward"],
+                answer: "To end the practice of slavery",
+                explanation: "The text explicitly states that the movement was 'dedicated to ending slavery,' making this its primary goal."
+            },
+            {
+                source_text: "During the early 20th century, the U.S. entered a period of progressive reform. The government passed laws to regulate food and drug safety, break up large monopolies, and protect natural resources. These changes were a response to problems caused by rapid industrialization.",
+                question: "Based on the text, what was a key result of the Progressive Era?",
+                options: ["A return to a purely agricultural economy", "Increased government regulation of business and public welfare", "A sharp decrease in the number of immigrants", "The abolition of slavery"],
+                answer: "Increased government regulation of business and public welfare",
+                explanation: "The text lists several reforms, such as regulating 'food and drug safety' and breaking up 'monopolies,' which are all examples of increased government regulation to improve public welfare."
+            },
+            {
+                source_text: "In the 1840s, the concept of Manifest Destiny was popular in the United States. It was the belief that the U.S. was destined to expand its dominion and spread democracy and capitalism across the North American continent, from coast to coast.",
+                question: "What did the idea of Manifest Destiny justify?",
+                options: ["Limiting American trade with other nations", "The westward expansion of the United States", "An increase in foreign immigration", "The development of new technologies"],
+                answer: "The westward expansion of the United States",
+                explanation: "Manifest Destiny was the belief that the U.S. was meant to expand 'across the North American continent, from coast to coast,' directly justifying westward expansion."
+            }
+        ],
+        economics: [
+            {
+                question: "In a market economy, the price of a product is primarily determined by the interaction of which two factors?",
+                options: ["Government regulation and taxes", "Supply and demand", "Production costs and advertising", "International trade and tariffs"],
+                answer: "Supply and demand",
+                explanation: "In a market economy, prices are set by the forces of supply (how much is available) and demand (how much people want it). A high demand with low supply leads to higher prices, and vice versa."
+            },
+            {
+                question: "What does Gross Domestic Product (GDP) measure?",
+                options: ["The total value of a country's exports", "The total number of people employed in a country", "The total value of all goods and services produced within a country in a year", "The amount of money in circulation"],
+                answer: "The total value of all goods and services produced within a country in a year",
+                explanation: "GDP is the most common measure of a country's economic health. It represents the market value of all final goods and services produced within a country in a given period."
+            },
+            {
+                question: "What is a key characteristic of a command economy?",
+                options: ["Individuals own the means of production.", "Economic decisions are made by supply and demand.", "The government makes all major economic decisions.", "There is no private property."],
+                answer: "The government makes all major economic decisions.",
+                explanation: "In a command economy, the government or a central authority controls the means of production and decides what to produce, how much to produce, and what the prices will be."
+            },
+            {
+                question: "What is the primary role of a central bank, such as the Federal Reserve, in the economy?",
+                options: ["To produce all currency", "To control the money supply and interest rates", "To regulate stock markets", "To collect taxes"],
+                answer: "To control the money supply and interest rates",
+                explanation: "Central banks are responsible for monetary policy. They use tools like adjusting interest rates to manage inflation and stabilize the economy."
+            },
+            {
+                question: "What is inflation?",
+                options: ["An increase in the value of a currency", "A general increase in prices and fall in the purchasing value of money", "A decrease in the unemployment rate", "An increase in government spending"],
+                answer: "A general increase in prices and fall in the purchasing value of money",
+                explanation: "Inflation is the rate at which the general level of prices for goods and services is rising, and subsequently, purchasing power is falling."
+            },
+            {
+                source_text: "A bar graph shows the unemployment rate in the United States from 2007 to 2012. The rate rises sharply from 2007 to 2009 and then gradually declines from 2010 to 2012.",
+                question: "Based on the graph, which of the following events most likely occurred between 2008 and 2009?",
+                options: ["An economic boom", "A period of recession", "A time of high government surpluses", "A decrease in consumer debt"],
+                answer: "A period of recession",
+                explanation: "A recession is characterized by a significant decline in economic activity, often marked by a sharp increase in the unemployment rate. The graph shows a steep rise in unemployment during this period, which corresponds to the Great Recession."
+            },
+            {
+                source_text: "A diagram illustrates the circular flow of a simple economy. It shows households providing factors of production (labor, land, capital) to firms, and firms providing goods and services to households. Money flows in the opposite direction for both transactions.",
+                question: "The diagram best illustrates the relationship between which two key economic players?",
+                options: ["Government and banks", "Consumers and producers", "Exporters and importers", "Investors and stockbrokers"],
+                answer: "Consumers and producers",
+                explanation: "In the circular flow model, households represent consumers who buy goods and services and provide labor. Firms represent producers who make those goods and services and hire labor. This model shows the flow of money and goods between them."
+            },
+            {
+                source_text: "A line graph shows the price of a gallon of milk over a 10-year period. The price rises slowly for 8 years and then drops sharply in the last two years. This drop coincides with a major new technology that increased milk production efficiency.",
+                question: "What is the most likely reason for the drop in the price of milk?",
+                options: ["A decrease in supply", "An increase in demand", "A decrease in production costs", "A government price cap"],
+                answer: "A decrease in production costs",
+                explanation: "The text states that a new technology 'increased milk production efficiency,' which would lower the cost to produce milk. Lower production costs often lead to lower prices for consumers."
+            },
+            {
+                source_text: "A country's government decides to raise taxes on imported goods like cars and electronics. This policy is designed to make foreign products more expensive and encourage consumers to buy domestically produced goods instead.",
+                question: "What is the term for a tax on imported goods?",
+                options: ["A subsidy", "A tariff", "An inflation tax", "A quota"],
+                answer: "A tariff",
+                explanation: "A tariff is a tax imposed by a government on goods and services imported from other countries. They are used to protect domestic industries."
+            },
+            {
+                source_text: "A news headline reads: 'Federal Reserve Lowers Interest Rates to Stimulate the Economy.' A subheading explains that lower rates will make it cheaper for businesses to borrow money for investment and for consumers to take out loans for big purchases.",
+                question: "Based on the headline and subheading, what is the intended effect of lowering interest rates?",
+                options: ["To decrease consumer spending", "To encourage borrowing and investment", "To increase unemployment", "To cause deflation"],
+                answer: "To encourage borrowing and investment",
+                explanation: "The text explicitly states that lower rates will make it 'cheaper for businesses to borrow' and for consumers to take out 'loans for big purchases,' which are all forms of borrowing and investment."
+            },
+            {
+                source_text: "A factory produces 100 widgets per hour with 5 workers. The factory then invests in a new machine that allows the same 5 workers to produce 200 widgets per hour. The company's productivity has doubled.",
+                question: "Based on the text, what is a key factor that increased the factory's productivity?",
+                options: ["Increasing the number of workers", "A decrease in production costs", "A new technology that improved efficiency", "An increase in demand for widgets"],
+                answer: "A new technology that improved efficiency",
+                explanation: "The text says the factory 'invests in a new machine' that allows workers to produce more widgets in the same amount of time. This new machine is a form of technology that improved efficiency."
+            }
+        ],
+        geography: [
+            {
+                question: "The study of the distribution of populations, resources, and industries on Earth is known as what?",
+                options: ["Cartography", "Demographics", "Geography", "Geopolitics"],
+                answer: "Geography",
+                explanation: "Geography is a broad field that studies the Earth's features and the distribution of life on Earth, including human activity and its effects."
+            },
+            {
+                question: "Which mountain range forms a major natural divide between the eastern and western parts of the United States?",
+                options: ["The Sierra Nevada", "The Appalachian Mountains", "The Cascade Range", "The Rocky Mountains"],
+                answer: "The Rocky Mountains",
+                explanation: "The Rocky Mountains, a vast mountain range in western North America, act as a continental divide. Rivers to the east flow to the Atlantic, and rivers to the west flow to the Pacific."
+            },
+            {
+                question: "What major body of water is located to the east of the United States?",
+                options: ["The Pacific Ocean", "The Indian Ocean", "The Atlantic Ocean", "The Great Lakes"],
+                answer: "The Atlantic Ocean",
+                explanation: "The Atlantic Ocean borders the eastern coast of the United States."
+            },
+            {
+                question: "What is the largest country in the world by land area?",
+                options: ["China", "United States", "Russia", "Canada"],
+                answer: "Russia",
+                explanation: "Russia is the largest country in the world by land area, spanning two continents: Europe and Asia."
+            },
+            {
+                question: "What is a peninsula?",
+                options: ["A piece of land surrounded by water on all sides", "A piece of land surrounded by water on three sides", "A narrow strip of land connecting two larger landmasses", "A high, flat area of land"],
+                answer: "A piece of land surrounded by water on three sides",
+                explanation: "A peninsula is a landform that is almost completely surrounded by water but is connected to the mainland."
+            },
+            {
+                source_text: "A map shows North America. The United States is bordered by Canada to the north and Mexico to the south. The Pacific Ocean is to the west and the Atlantic Ocean is to the east.",
+                question: "Based on the map, which country shares a border with the United States to the south?",
+                options: ["Canada", "Mexico", "Cuba", "Guatemala"],
+                answer: "Mexico",
+                explanation: "The map shows that Mexico is directly south of the United States, sharing a long border."
+            },
+            {
+                source_text: "The Sahara Desert in North Africa is the world's largest hot desert. It is characterized by extreme temperatures, with daytime highs exceeding 100°F and nighttime lows dropping below freezing. Rainfall is extremely rare.",
+                question: "Based on the text, what is a key feature of a desert climate?",
+                options: ["High humidity", "Stable, mild temperatures", "Wide daily temperature range and little precipitation", "Consistent rainfall throughout the year"],
+                answer: "Wide daily temperature range and little precipitation",
+                explanation: "The text describes 'extreme temperatures' with a large difference between day and night, and states that 'rainfall is extremely rare.' This directly supports the answer."
+            },
+            {
+                source_text: "A pie chart shows the world's population distribution by continent. Asia accounts for over 60% of the world's population, while North America and South America combined account for less than 15%.",
+                question: "Based on the chart, which of the following is true about the world's population?",
+                options: ["Europe has the largest population.", "More than half of the world's population lives in Asia.", "South America's population is larger than North America's.", "Africa's population is the smallest."],
+                answer: "More than half of the world's population lives in Asia.",
+                explanation: "The pie chart indicates that Asia accounts for 'over 60%' of the population. Since 60% is more than half, this statement is true."
+            },
+            {
+                source_text: "Globalization is the process of interaction and integration among people, companies, and governments worldwide. It has been driven by international trade and investment and aided by information technology. One result of globalization is that a company might have its products designed in the U.S., manufactured in China, and sold in Europe.",
+                question: "Based on the text, which of the following is a result of globalization?",
+                options: ["Decreased international trade", "Increased self-sufficiency of nations", "The concentration of production in a single country", "The dispersal of production processes across multiple countries"],
+                answer: "The dispersal of production processes across multiple countries",
+                explanation: "The text gives an example of this, where a product is 'designed in the U.S., manufactured in China, and sold in Europe,' which shows a dispersal of the production process."
+            },
+            {
+                source_text: "A map of the United States shows major rivers. The Mississippi River flows from the north to the south, emptying into the Gulf of Mexico. Major cities like St. Louis and New Orleans are located along its banks.",
+                question: "Based on the map, which of the following is a major river in the United States?",
+                options: ["The Amazon River", "The Nile River", "The Mississippi River", "The Thames River"],
+                answer: "The Mississippi River",
+                explanation: "The text directly references the 'Mississippi River' as a major river, and the map shows it flowing through the United States."
+            }
+        ]
+    };
+
+    let currentQuestionIndex = 0;
+    let currentCategory = null;
+    let score = { correct: 0, incorrect: 0, total: 0 };
+    let selectedOption = null;
+
+    const renderQuestion = () => {
+        if (!currentCategory) return;
+        
+        const questionData = allQuestions[currentCategory][currentQuestionIndex];
+        document.getElementById('question-tracker').textContent = `Question ${currentQuestionIndex + 1} of ${allQuestions[currentCategory].length}`;
+        document.getElementById('question-text').textContent = questionData.question;
+        const optionsContainer = document.getElementById('options-container');
+        optionsContainer.innerHTML = '';
+        if (questionData.source_text) {
+            document.getElementById('source-material').classList.remove('hidden');
+            document.getElementById('source-text').textContent = questionData.source_text;
+        } else {
+            document.getElementById('source-material').classList.add('hidden');
+        }
+
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.className = "w-full text-left py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-md transition duration-200 ease-in-out font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50";
+            button.addEventListener('click', () => {
+                document.querySelectorAll('#options-container button').forEach(btn => {
+                    btn.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-600');
+                    btn.classList.add('bg-gray-100', 'text-gray-800', 'hover:bg-gray-200');
+                });
+                button.classList.remove('bg-gray-100', 'text-gray-800', 'hover:bg-gray-200');
+                button.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-600');
+                selectedOption = option;
+            });
+            optionsContainer.appendChild(button);
+        });
+        document.getElementById('submit-button').classList.remove('hidden');
+        document.getElementById('next-button').classList.add('hidden');
+        document.getElementById('feedback-container').classList.add('hidden');
+        selectedOption = null;
+    };
+
+    const checkAnswer = async () => {
+        if (!selectedOption) {
+            showMessage("Please select an answer first.", 'error');
+            return;
+        }
+
+        const questionData = allQuestions[currentCategory][currentQuestionIndex];
+        document.getElementById('submit-button').classList.add('hidden');
+        document.getElementById('next-button').classList.remove('hidden');
+        
+        document.querySelectorAll('#options-container button').forEach(btn => btn.disabled = true);
+
+        document.querySelectorAll('#options-container button').forEach(btn => {
+            btn.classList.remove('bg-blue-500', 'text-white', 'hover:bg-blue-600');
+            if (btn.textContent === questionData.answer) {
+                btn.classList.add('bg-green-500', 'text-white');
+            } else if (btn.textContent === selectedOption) {
+                btn.classList.add('bg-red-500', 'text-white');
+            }
+        });
+
+        score.total++;
+        if (selectedOption === questionData.answer) {
+            score.correct++;
+            showMessage("Correct! Great job!", 'success');
+        } else {
+            score.incorrect++;
+            showMessage("Incorrect. The correct answer is highlighted in green.", 'error');
+            document.getElementById('feedback-container').classList.remove('hidden');
+            document.getElementById('explanation-box').innerHTML = `
+                <p class="font-bold">Key Concept:</p>
+                <p>${questionData.explanation}</p>
+            `;
+        }
+
+        updateProgress();
+        saveProgress();
+    };
+
+    const nextQuestion = () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < allQuestions[currentCategory].length) {
+            renderQuestion();
+            document.querySelectorAll('#options-container button').forEach(btn => btn.disabled = false);
+        } else {
+            showMessage("You've completed this section! You can select another one.", 'info');
+            showCategorySelection();
+            saveProgress();
+        }
+    };
+
+    const saveProgress = async () => {
+        if (db && userId) {
+            try {
+                const userDocRef = doc(db, `artifacts/${appId}/users/${userId}/ged_social_studies_progress/quiz`);
+                await setDoc(userDocRef, score, { merge: true });
+                console.log("Progress saved successfully.");
+            } catch (e) {
+                console.error("Error saving progress:", e);
+                showMessage("Failed to save progress.", 'error');
+            }
+        }
+    };
+
+    const loadProgress = async () => {
+        if (db && userId) {
+            try {
+                const userDocRef = doc(db, `artifacts/${appId}/users/${userId}/ged_social_studies_progress/quiz`);
+                const docSnap = await getDoc(userDocRef);
+                if (docSnap.exists()) {
+                    score = docSnap.data();
+                    console.log("Loaded existing progress:", score);
+                } else {
+                    console.log("No existing progress found. Starting new.");
+                }
+            } catch (e) {
+                console.error("Error loading progress:", e);
+                showMessage("Failed to load past progress.", 'error');
+            }
+        }
+        updateProgress();
+    };
+
+    const updateProgress = () => {
+        document.getElementById('correct-count').textContent = score.correct;
+        document.getElementById('incorrect-count').textContent = score.incorrect;
+        document.getElementById('total-count').textContent = score.total;
+        
+        const finalScore = score.total > 0 ? Math.round((score.correct / score.total) * 200) : 0;
+        document.getElementById('final-score').textContent = finalScore;
+    };
+    
+    const showCategorySelection = () => {
+        document.getElementById('category-section').classList.remove('hidden');
+        document.getElementById('quiz-section').classList.add('hidden');
+    };
+    
+    document.querySelectorAll('#category-buttons button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            currentCategory = e.target.dataset.category;
+            currentQuestionIndex = 0;
+            document.getElementById('category-section').classList.add('hidden');
+            document.getElementById('quiz-section').classList.remove('hidden');
+            renderQuestion();
+            document.querySelectorAll('#options-container button').forEach(btn => btn.disabled = false);
+        });
+    });
+
+    document.getElementById('back-button').addEventListener('click', showCategorySelection);
+    document.getElementById('submit-button').addEventListener('click', checkAnswer);
+    document.getElementById('next-button').addEventListener('click', nextQuestion);
+    
+    initializeFirebase();
+</script>
+
+</body>
+</html>

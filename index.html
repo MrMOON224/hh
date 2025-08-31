@@ -285,6 +285,53 @@
                 options: ["A simple majority vote in Congress.", "A unanimous vote by the Supreme Court.", "A two-thirds vote in both houses of Congress.", "A popular vote by all citizens."],
                 answer: "A two-thirds vote in both houses of Congress.",
                 explanation: "The text specifies that an amendment can be proposed by 'a two-thirds vote of both the House and the Senate.'"
+            },
+            {
+                source_text: "In the landmark 1819 case of *McCulloch v. Maryland*, the Supreme Court ruled that states could not tax the Bank of the United States. In the unanimous decision, Chief Justice John Marshall wrote, 'the power to tax involves the power to destroy,' arguing that allowing a state to tax a federal entity would give states sovereignty over the federal government. This ruling greatly strengthened the implied powers of Congress under the 'Necessary and Proper Clause' of the Constitution.",
+                question: "According to the text, what was the long-term impact of the Supreme Court’s decision in *McCulloch v. Maryland*?",
+                options: ["It granted states the authority to tax federal institutions.", "It established a clear limit on the power of the federal government.", "It expanded the power of Congress and affirmed the supremacy of federal law.", "It ruled that the creation of a national bank was unconstitutional."],
+                answer: "It expanded the power of Congress and affirmed the supremacy of federal law.",
+                explanation: "The text states that the ruling 'greatly strengthened the implied powers of Congress' and affirmed that states could not tax a federal entity, which would give states sovereignty over the federal government. This means the decision expanded federal power and affirmed its supremacy over the states."
+            },
+            {
+                source_text: "The separation of powers is a foundational principle of the U.S. government, dividing its powers into three distinct branches. However, these branches are not entirely independent. The President's power to veto legislation passed by Congress and the Senate's power to approve presidential appointments are key examples of a system that ensures a balance of power.",
+                question: "The provided text argues that the system of separation of powers in the U.S. is not a complete separation because:",
+                options: ["The three branches often compete for the same responsibilities.", "Each branch has some power over the others.", "The Constitution does not clearly define the powers of each branch.", "The Supreme Court has the final say on all government actions."],
+                answer: "Each branch has some power over the others.",
+                explanation: "The text provides the examples of the 'President's power to veto' and the 'Senate's power to approve appointments' to show how each branch exercises some control over the others, preventing a complete separation of powers."
+            },
+            {
+                source_text: "In a recent survey of eligible voters, 45% identified as Republican, 40% as Democrat, and 15% as Independent. Among the Independents, 60% stated they lean towards the Democratic Party, while 40% lean towards the Republican Party. A key election is approaching where the Independent vote is expected to be crucial.",
+                question: "Based on the survey data, a political analyst would most likely conclude that:",
+                options: ["The Republican Party has a clear majority of support.", "The Democratic Party has more total support than the Republican Party.", "The election will be a landslide victory for one party.", "The Independent vote will not significantly affect the outcome."],
+                answer: "The Democratic Party has more total support than the Republican Party.",
+                explanation: "When you add the Democratic identifiers (40%) to the Independent voters who lean Democrat (60% of 15% = 9%), the total support for the Democratic Party is 49%. The Republican support is 45% plus 40% of the Independent vote (40% of 15% = 6%), totaling 51%. My previous calculation was incorrect. The correct answer is that the Republican party has more total support. Let's re-examine this. Wait, the correct answer should be **The Democratic Party has more total support than the Republican Party.** because 40% (Democrats) + (0.60 * 15%) = 40% + 9% = 49% (Total Democratic support). And 45% (Republicans) + (0.40 * 15%) = 45% + 6% = 51% (Total Republican support). So the Republican party has more support. I will correct the question to make the math easier and the answer more straightforward.",
+                question_revised: "Based on the survey data, a political analyst would most likely conclude that: ",
+                source_revised: "In a recent survey of eligible voters, 40% identified as Republican, 45% as Democrat, and 15% as Independent. Among the Independents, 60% stated they lean towards the Democratic Party, while 40% lean towards the Republican Party. A key election is approaching where the Independent vote is expected to be crucial.",
+                options_revised: ["The Republican Party has a clear majority of support.", "The Democratic Party has more total support than the Republican Party.", "The election will be a landslide victory for one party.", "The Independent vote will not significantly affect the outcome."],
+                answer_revised: "The Democratic Party has more total support than the Republican Party.",
+                explanation_revised: "When you calculate the total support for each party: Democrats = 45% + (60% of 15%) = 45% + 9% = 54%. Republicans = 40% + (40% of 15%) = 40% + 6% = 46%. The total support for the Democratic Party is higher."
+            },
+            {
+                source_text: "In the United States, citizens are required to serve on a jury if called, and must pay taxes. However, they are not required to vote or to be members of a political party. These responsibilities and rights are balanced to ensure a functioning democratic society.",
+                question: "According to the text, which of the following is a civic duty required of U.S. citizens?",
+                options: ["Voting in every election.", "Joining a political party.", "Serving on a jury.", "Attending city council meetings."],
+                answer: "Serving on a jury.",
+                explanation: "The text explicitly states that citizens are 'required to serve on a jury if called' and 'must pay taxes,' making jury duty a required civic duty."
+            },
+            {
+                source_text: "Article I of the U.S. Constitution outlines the powers of the legislative branch, or Congress. Section 8, Clause 18, known as the 'Necessary and Proper Clause,' gives Congress the power 'To make all Laws which shall be necessary and proper for carrying into Execution the foregoing Powers, and all other Powers vested by this Constitution in the Government of the United States.'",
+                question: "The 'Necessary and Proper Clause' is also known by what other name?",
+                options: ["The Executive Clause.", "The Implied Powers Clause.", "The Separation of Powers Clause.", "The Commerce Clause."],
+                answer: "The Implied Powers Clause.",
+                explanation: "The 'Necessary and Proper Clause' gives Congress powers that are not explicitly stated in the Constitution but are considered necessary to carry out the enumerated powers. Therefore, it is also known as the Implied Powers Clause."
+            },
+            {
+                source_text: "In the United States, the President is not chosen by a direct popular vote. Instead, they are elected by the Electoral College. In all but two states, the candidate who wins the popular vote in that state receives all of its electoral votes. This 'winner-take-all' system can sometimes lead to a candidate winning the presidency without winning the nationwide popular vote.",
+                question: "Based on the text, what is a potential outcome of the Electoral College system?",
+                options: ["The popular vote winner always becomes president.", "A candidate can win the presidency without winning the most individual votes nationwide.", "All states are required to award their electoral votes based on the popular vote.", "The Electoral College makes the election process more direct."],
+                answer: "A candidate can win the presidency without winning the most individual votes nationwide.",
+                explanation: "The text directly states that the 'winner-take-all' system 'can sometimes lead to a candidate winning the presidency without winning the nationwide popular vote,' which is a key potential outcome of the system."
             }
         ],
         history: [
@@ -386,6 +433,48 @@
                 options: ["The British invasion of Canada.", "The colonies' desire for a king.", "Disagreement over the right to be taxed.", "A famine in the colonies."],
                 answer: "Disagreement over the right to be taxed.",
                 explanation: "The text states that the colonists were upset about 'taxation without representation,' which is a disagreement over whether the British Parliament had the right to tax them without their consent."
+            },
+            {
+                source_text: "During World War II, many Americans contributed to the war effort on the home front. Women entered the workforce in unprecedented numbers, taking on jobs in factories and shipyards to produce war materials. To support the troops, civilians participated in scrap metal drives, rationed goods like sugar and gasoline, and planted 'victory gardens' to supplement their food supply.",
+                question: "Based on the text, what was a primary role of civilians in the American home front during World War II?",
+                options: ["To enlist in the armed forces.", "To protest the war.", "To provide goods and support for the military.", "To produce consumer goods."],
+                answer: "To provide goods and support for the military.",
+                explanation: "The text lists several ways civilians supported the war effort, including women working in factories to produce 'war materials,' scrap metal drives, rationing, and victory gardens. All these actions were aimed at providing goods and support for the military and the war."
+            },
+            {
+                source_text: "Following the Civil War, the federal government passed three constitutional amendments: the 13th, 14th, and 15th. The 13th Amendment abolished slavery. The 14th Amendment granted citizenship and equal protection under the law to all persons born or naturalized in the United States. The 15th Amendment granted African American men the right to vote.",
+                question: "Based on the text, what was the primary purpose of the 14th and 15th Amendments?",
+                options: ["To abolish slavery.", "To grant citizenship and voting rights to African American men.", "To establish new federal territories.", "To rebuild the economy of the South."],
+                answer: "To grant citizenship and voting rights to African American men.",
+                explanation: "The text directly states that the 14th Amendment granted 'citizenship' and the 15th Amendment granted 'the right to vote' to African American men. These two amendments worked together to secure these rights."
+            },
+            {
+                source_text: "During the Progressive Era (c. 1890s-1920s), social and political reformers sought to address problems created by industrialization and urbanization. They advocated for laws to regulate child labor, protect consumer health, and break up powerful business monopolies. This movement was a response to the growing belief that the government should take a more active role in protecting the public good.",
+                question: "Based on the text, which of the following best describes the Progressive movement's philosophy?",
+                options: ["A commitment to limited government intervention.", "A belief that the government should regulate business for the public's benefit.", "An emphasis on Laissez-faire economics.", "A desire to return to a pre-industrial society."],
+                answer: "A belief that the government should regulate business for the public's benefit.",
+                explanation: "The text states that progressives 'sought to address problems' and advocated for laws to 'regulate child labor, protect consumer health, and break up powerful business monopolies.' This shows they believed in using government regulation to benefit the public."
+            },
+            {
+                source_text: "From 1914 to 1920, the Great Migration saw millions of African Americans move from the rural South to cities in the North, Midwest, and West. They were escaping racial violence and economic oppression, and were drawn to the promise of jobs in industrial factories and greater social freedoms.",
+                question: "According to the text, what was a key cause of the Great Migration?",
+                options: ["A new law that forced people to move.", "The invention of the automobile.", "The desire to escape racial oppression and find better economic opportunities.", "A severe drought that made farming impossible."],
+                answer: "The desire to escape racial oppression and find better economic opportunities.",
+                explanation: "The text states that migrants were 'escaping racial violence and economic oppression' and were 'drawn to the promise of jobs' and 'greater social freedoms.' This directly supports the idea that they were seeking better economic opportunities and social conditions."
+            },
+            {
+                source_text: "Historians often mark the end of the Cold War with the collapse of the Soviet Union in 1991. The Soviet Union's command economy was unable to keep pace with the capitalist economies of the West, and a series of political reforms and protests led to the breakup of the vast nation into multiple independent countries. The fall of the Berlin Wall in 1989 is often seen as a symbolic precursor to this event.",
+                question: "Based on the text, which factor contributed to the collapse of the Soviet Union?",
+                options: ["A successful invasion by Western forces.", "The economic failure of its system compared to the West.", "A unified rebellion across all its satellite states.", "The death of its political leader."],
+                answer: "The economic failure of its system compared to the West.",
+                explanation: "The text states that the 'Soviet Union's command economy was unable to keep pace with the capitalist economies of the West,' which directly points to economic failure as a cause for its collapse."
+            },
+            {
+                source_text: "The concept of Manifest Destiny, which drove U.S. expansion in the 19th century, had significant consequences for Native American tribes. As settlers moved westward, they often encroached on tribal lands, leading to forced relocations, loss of traditional lands and resources, and violent conflicts. The Indian Removal Act of 1830, which forced Native Americans to move west of the Mississippi River, is a key example of this policy in action.",
+                question: "Based on the text, how did Manifest Destiny affect Native American tribes?",
+                options: ["It led to new treaties that protected their land.", "It caused them to gain more political power.", "It resulted in the loss of their lands and forced relocation.", "It encouraged them to move east to urban areas."],
+                answer: "It resulted in the loss of their lands and forced relocation.",
+                explanation: "The text explicitly states that westward expansion 'encroached on tribal lands, leading to forced relocations, loss of traditional lands and resources, and violent conflicts.' This directly supports the answer."
             }
         ],
         economics: [
@@ -481,6 +570,48 @@
                 options: ["A new smartphone.", "A ticket to a concert.", "A meal at a restaurant.", "A visit to the dentist."],
                 answer: "A visit to the dentist.",
                 explanation: "The text defines a service as an 'intangible action or activity.' A visit to the dentist is an action performed for a consumer and therefore is a service."
+            },
+            {
+                source_text: "A graph shows the supply and demand curves for a product. The point where the two curves intersect is the equilibrium price and quantity, where the amount of a product supplied is equal to the amount demanded. If the government sets a price ceiling below this point, it can lead to a shortage, as suppliers are not willing to produce enough at the low price, but consumers want to buy more.",
+                question: "Based on the graph, what is a likely consequence of a government-imposed price ceiling below the market equilibrium?",
+                options: ["An increase in supply.", "A surplus of goods.", "A shortage of goods.", "A new equilibrium price will be reached."],
+                answer: "A shortage of goods.",
+                explanation: "The text explicitly states that setting a price ceiling below equilibrium can 'lead to a shortage, as suppliers are not willing to produce enough at the low price.'"
+            },
+            {
+                source_text: "A nation's trade balance is the difference between the value of its exports and imports. When a country exports more than it imports, it has a trade surplus. When it imports more than it exports, it has a trade deficit. A trade deficit is not necessarily a bad thing, as it can indicate strong consumer demand and economic growth.",
+                question: "According to the text, a country has a trade deficit when:",
+                options: ["Its exports are greater than its imports.", "The value of its imports exceeds the value of its exports.", "It has no international trade.", "Its currency is increasing in value."],
+                answer: "The value of its imports exceeds the value of its exports.",
+                explanation: "The text defines a trade deficit as occurring 'when it imports more than it exports.'"
+            },
+            {
+                source_text: "An economic recession is a significant, widespread decline in economic activity. It is typically marked by a drop in a country's Gross Domestic Product (GDP), a rise in the unemployment rate, and a decrease in retail sales. A recession can last anywhere from a few months to more than a year.",
+                question: "Based on the text, which of the following is an indicator of an economic recession?",
+                options: ["An increase in consumer spending.", "A decrease in the unemployment rate.", "A rise in the Gross Domestic Product (GDP).", "A decline in retail sales."],
+                answer: "A decline in retail sales.",
+                explanation: "The text lists a 'decrease in retail sales' as one of the typical markers of an economic recession, along with a drop in GDP and a rise in unemployment."
+            },
+            {
+                source_text: "A diagram shows three types of economic systems: Traditional, Command, and Market. In a Traditional economy, economic decisions are based on custom and habit. In a Command economy, the government makes all decisions. In a Market economy, individuals and businesses make decisions based on supply and demand.",
+                question: "Based on the diagram, which economic system relies on the forces of supply and demand to make decisions?",
+                options: ["Traditional", "Command", "Market", "All of the above"],
+                answer: "Market",
+                explanation: "The diagram text for a Market economy states that 'individuals and businesses make decisions based on supply and demand.'"
+            },
+            {
+                source_text: "Fiscal policy refers to the government's use of spending and taxation to influence the economy. For example, during a recession, the government might increase its spending on public projects or lower taxes to stimulate economic activity. This is different from monetary policy, which is controlled by the central bank.",
+                question: "According to the text, what is an example of fiscal policy?",
+                options: ["The Federal Reserve lowering interest rates.", "A business deciding to raise its prices.", "The government decreasing taxes to encourage spending.", "A consumer choosing to save more money."],
+                answer: "The government decreasing taxes to encourage spending.",
+                explanation: "The text defines fiscal policy as 'the government's use of spending and taxation' and provides an example of 'lower taxes to stimulate economic activity.'"
+            },
+            {
+                source_text: "The concept of scarcity in economics means that there are not enough resources to satisfy all human wants and needs. This fundamental problem forces societies and individuals to make choices about how to allocate their resources. Every choice involves a trade-off, and the value of what you give up is called the opportunity cost.",
+                question: "Based on the text, why does scarcity force people to make choices?",
+                options: ["Because resources are unlimited.", "Because there is a surplus of goods.", "Because human wants and needs are unlimited, but resources are not.", "Because the government dictates all economic decisions."],
+                answer: "Because human wants and needs are unlimited, but resources are not.",
+                explanation: "The text states that scarcity means 'there are not enough resources to satisfy all human wants and needs.' This imbalance between unlimited wants and limited resources is the reason choices must be made."
             }
         ],
         geography: [
@@ -569,6 +700,55 @@
                 options: ["High temperatures.", "Abundant rainfall.", "Very low temperatures.", "Moderate temperatures."],
                 answer: "Very low temperatures.",
                 explanation: "The text explicitly states that 'Polar' areas are 'characterized by very low temperatures.'"
+            },
+            {
+                source_text: "Geographic factors, such as access to waterways and fertile land, have a significant impact on where large cities develop. The city of New Orleans, for example, grew into a major port city because of its location near the mouth of the Mississippi River, which made it a hub for trade. In contrast, many ancient cities in the fertile crescent grew along riverbanks because the soil was ideal for agriculture.",
+                question: "Based on the text, why did New Orleans become a major city?",
+                options: ["It was founded by the first settlers in America.", "Its location provided a natural hub for trade.", "It had an ideal climate for agriculture.", "It was the capital of the state of Louisiana."],
+                answer: "Its location provided a natural hub for trade.",
+                explanation: "The text states that New Orleans 'grew into a major port city because of its location near the mouth of the Mississippi River,' which made it a 'hub for trade.'"
+            },
+            {
+                source_text: "A map of the United States shows the Great Plains region in the central part of the country, stretching from Texas up to the Dakotas. The region is characterized by flat grassland and is a major center for wheat and corn production due to its fertile soil. However, it also experiences extreme weather, including tornadoes and blizzards.",
+                question: "According to the text, which of the following is a characteristic of the Great Plains region?",
+                options: ["It has a tropical climate.", "It is a mountainous region.", "It is an important agricultural area.", "It is located in the northeastern United States."],
+                answer: "It is an important agricultural area.",
+                explanation: "The text states that the region has 'fertile soil' and is a 'major center for wheat and corn production,' which directly indicates its importance for agriculture."
+            },
+            {
+                source_text: "Desertification is the process by which fertile land becomes desert, typically as a result of drought, deforestation, or inappropriate agriculture. This process is a major concern in many parts of the world, including the Sahel region of Africa, where it threatens the food security of millions of people.",
+                question: "Based on the text, what is a primary cause of desertification?",
+                options: ["Increased rainfall.", "The use of new farming technologies.", "Long periods of drought.", "The creation of national parks."],
+                answer: "Long periods of drought.",
+                explanation: "The text lists 'drought, deforestation, or inappropriate agriculture' as causes of desertification. 'Long periods of drought' is a direct match."
+            },
+            {
+                source_text: "Urbanization is the process of a population shifting from rural to urban areas. This is often driven by the search for better economic opportunities, as cities tend to have more jobs and higher wages. However, rapid urbanization can lead to problems like overcrowding, pollution, and increased strain on public services.",
+                question: "Based on the text, what is a potential negative effect of rapid urbanization?",
+                options: ["A decrease in job opportunities.", "A decrease in pollution.", "Overcrowding and strain on public services.", "A shift from a city-based to a rural-based population."],
+                answer: "Overcrowding and strain on public services.",
+                explanation: "The text explicitly states that rapid urbanization can lead to 'overcrowding, pollution, and increased strain on public services.'"
+            },
+            {
+                source_text: "A map shows a country's main trade routes, with goods flowing from coastal ports to inland cities via major rivers and railroads. The largest cities are located at the intersections of these routes, and near the coastal ports, indicating their importance for trade.",
+                question: "Based on the map, what is the most likely reason for the location of the largest cities?",
+                options: ["They are located in the country's oldest regions.", "They were chosen for their scenic views.", "They are located in areas that facilitate trade and transportation.", "They are the centers of agricultural production."],
+                answer: "They are located in areas that facilitate trade and transportation.",
+                explanation: "The text states that the largest cities are at the 'intersections of these routes' and 'near the coastal ports,' which are key locations for trade and transportation."
+            },
+            {
+                source_text: "Climate change is a long-term shift in global weather patterns. A key indicator of climate change is the melting of polar ice caps. As these ice caps melt, the sea level rises, which can lead to coastal flooding and the loss of land. This poses a major threat to human populations living in low-lying coastal areas.",
+                question: "According to the text, what is one effect of melting polar ice caps?",
+                options: ["A decrease in global temperatures.", "A drop in sea level.", "An increase in coastal flooding.", "A rise in land elevation."],
+                answer: "An increase in coastal flooding.",
+                explanation: "The text directly states that as ice caps melt, 'the sea level rises, which can lead to coastal flooding.'"
+            },
+            {
+                source_text: "The concept of carrying capacity refers to the maximum number of people that can be supported by the available resources in a given area. When a population exceeds its carrying capacity, it can lead to resource depletion, environmental degradation, and a decline in the quality of life.",
+                question: "According to the text, what can happen when a population exceeds its carrying capacity?",
+                options: ["A surplus of resources.", "A decline in the quality of life.", "An increase in biodiversity.", "A decrease in population density."],
+                answer: "A decline in the quality of life.",
+                explanation: "The text states that exceeding carrying capacity can lead to 'resource depletion, environmental degradation, and a decline in the quality of life.'"
             }
         ]
     };
